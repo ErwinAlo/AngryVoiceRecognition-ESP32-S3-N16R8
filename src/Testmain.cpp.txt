@@ -1,0 +1,28 @@
+#include <Arduino.h>
+
+void setup() {
+  Serial.begin(115200);
+  delay(2000); // Tiempo para abrir el monitor serial
+
+  Serial.println("\n--- Info de tu ESP32-S3 (N16R8) ---");
+  
+  // 1. Verificar Flash (N16)
+  uint32_t flashSize = ESP.getFlashChipSize() / (1024 * 1024);
+  Serial.printf("Tamaño de Flash: %u MB\n", flashSize);
+
+  // 2. Verificar PSRAM (R8)
+  if (psramInit()) {
+    Serial.println("¡PSRAM detectada correctamente!");
+    Serial.printf("Total PSRAM: %u bytes (%d MB)\n", ESP.getPsramSize(), ESP.getPsramSize() / (1024 * 1024));
+    Serial.printf("PSRAM libre: %u bytes\n", ESP.getFreePsram());
+  } else {
+    Serial.println("ERROR: No se detectó la PSRAM. Revisa la config.");
+  }
+
+  Serial.println("-----------------------------------\n");
+}
+
+void loop() {
+  Serial.println("Hola desde tu potente ESP32-S3!");
+  delay(5000);
+}
