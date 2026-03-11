@@ -160,8 +160,8 @@ void loop() {
       digitalWrite(BUZZER_PIN, (feeling == 1) ? HIGH : LOW);
 
       // --- SALIDA DETALLADA ESTILO ANTERIOR ---
-      Serial.printf("Energía: %.4f\n", energia);
-      Serial.printf("Tiempo MFCC: %.2f ms\n", (t2 - t1) / 1000.0);
+      //Serial.printf("Energía: %.4f\n", energia);
+      Serial.printf("\nTiempo MFCC: %.2f ms\n", (t2 - t1) / 1000.0);
       Serial.printf("Tiempo Inferencia: %.2f ms\n", (t4 - t3) / 1000.0);
       Serial.printf("Tiempo Total: %.2f ms\n", (t4 - t1) / 1000.0);
       
@@ -182,7 +182,7 @@ void loop() {
 void audio_normalized(int32_t *raw_signal, float *normalized_signal) {
     float sum = 0;
     for(int j = 0; j < BUFLEN; j++) {
-        raw_signal[j] &= 0xFFFFFF00; 
+        raw_signal[j] &= 0xFFFFFF00;    // Elimina datos de bits significativos
         sum += (float)(raw_signal[j] >> 14);
     }
     float mean = sum / BUFLEN;
@@ -198,11 +198,32 @@ void audio_normalized(int32_t *raw_signal, float *normalized_signal) {
 
 int interprets_output(TfLiteTensor *outputTensor) {
     if (!outputTensor || !outputTensor->data.f) return 0;
-    float val = outputTensor->data.f[0];
-    int result = (val >= 0.5) ? 1 : 0;
     
-    // Mantenemos el formato de probabilidad
-    Serial.printf("Salida: %.6f - %s\n", val, emotion_vec[result].c_str());
+    // 1. Obtener el valor crudo (0.0 a 1.0)
+    float val_angry = outputTensor->data.f[0];
+    float val_other = 1.0f - val_angry;
+    
+    // 2. Determinar el resultado (Umbral 0.5)
+    int result = (val_angry >= 0.5) ? 1 : 0;
+
+    // 3. Crear la barra visual [##########----------]
+    String barra = "[";
+    int longitudBarra = 20; 
+    int rellenos = (int)(val_angry * longitudBarra);
+    for (int j = 0; j < longitudBarra; j++) {
+        if (j < rellenos) barra += "#"; 
+        else barra += "-";
+    }
+    barra += "]";
+
+    // --- SALIDA AL MONITOR SERIAL ---
+    // Mantenemos tu salida original exacta:
+    Serial.printf("Salida: %.6f - %s\n", val_angry, emotion_vec[result].c_str());
+    
+    // Agregamos el monitor de porcentajes y escala
+    //Serial.println(">>> COMPARATIVO DE CONFIANZA <<<");
+    Serial.printf("\nANGRY: %d%%  %s  OTHER: %d%%\n", (int)(val_angry*100), barra.c_str(), (int)(val_other*100));
+    
     return result;
 }
 
