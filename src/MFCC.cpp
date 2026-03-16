@@ -97,7 +97,8 @@ void mel_spectrogram(float **triangular_matrix, float **fft_matrix, float **mfcc
       for(int k = 0; k < fft_rows; k++) {
         suma_mel += triangular_matrix[i][k] * col_fft[k];
       }
-      mfcc_matrix[i][j] = 13.0f * log10f(suma_mel + 1e-6f);
+      //modificar a log 
+      mfcc_matrix[i][j] = 13.0f * log10f(suma_mel + 1e-6f);  //
     }
   }
 }
@@ -145,7 +146,7 @@ void init_mfcc_matrices() {
 
     triangular_filters(tri_mat);
     matrices_initialized = true;
-    Serial.println(">>> S3 Turbo Mode: Matrices listas.");
+    Serial.println(">>> Matrices listas.");
 }
 
 void mfccs(float *input_signal, float **mfcc_matrix) {
