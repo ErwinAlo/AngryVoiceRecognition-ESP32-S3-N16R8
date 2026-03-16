@@ -12,6 +12,10 @@
 #include "NeuralNetwork.h"
 #include "tensorflow/lite/c/common.h"
 
+// Variables para mantener el estado del filtro de audio
+float last_x = 0;
+float last_y = 0;
+// Contador de iteraciones para impresión 
 int i = 0;
 
 // --- DEFINICIÓN DE PINES ---
@@ -32,6 +36,7 @@ static const i2s_port_t i2s_num = I2S_NUM_0;
 size_t number_bytes_read;
 NeuralNetwork *nn = nullptr;
 
+// Objeto para la matriz de LEDs
 MD_MAX72XX mxObj = MD_MAX72XX(MD_MAX72XX::GENERIC_HW, MOSI_PIN, SCK_PIN, CS_PIN, NUM_MAT);
 int Mat[1] = {0};
 String emotion_vec[] = {"Other","Angry"};
@@ -49,6 +54,7 @@ static const i2s_config_t i2s_config = {
   .use_apll = false
 };
 
+// Configuración de pines I2S (sph0645)
 static const i2s_pin_config_t pin_config = {
   .bck_io_num = I2S_BCLK,
   .ws_io_num = I2S_LRCL,
@@ -56,7 +62,7 @@ static const i2s_pin_config_t pin_config = {
   .data_in_num = I2S_DOUT
 };
 
-// PROTOTIPOS
+// prototipos de mis funciones
 void audio_normalized(int32_t *raw_signal, float *normalized_signal);
 int interprets_output(TfLiteTensor *outputTensor);
 float** allocate_mfcc_matrix_psram(int rows, int cols);
@@ -77,8 +83,8 @@ void setup() {
   esp_bt_controller_disable();
   esp_wifi_stop();
 
-  pinMode(BUZZER_PIN, OUTPUT);
-  digitalWrite(BUZZER_PIN, LOW);
+  pinMode(BUZZER_PIN, OUTPUT);// Configuramos el pin del buzzer como salida
+  digitalWrite(BUZZER_PIN, LOW);// Aseguramos que el buzzer esté apagado al inicio
 
   nn = new NeuralNetwork();
   if (!nn->begin()) {
@@ -118,8 +124,8 @@ void loop() {
     for (int j = 0; j < BUFLEN; j++) energia += abs(inputAudio[j]);
     energia /= BUFLEN;
 
-    // Filtro básico de energía
-    if (energia < 0.15) { 
+    // Filtro básico de energía que permite ignorar segmentos de silencio o ruido muy bajo. El umbral de 0.020 es empírico y puede ajustarse según el entorno.
+    if (energia < 0.02) { 
         if (i % 20 == 0) Serial.printf("Silencio detectado (E: %.4f)\n", energia); 
         emotion(0, Mat, 0, mxObj);
         digitalWrite(BUZZER_PIN, LOW);
@@ -143,12 +149,14 @@ void loop() {
           inputBuffer[index++] = mfcc_mat[r][c];
         }
       }
-    }
+    }// --- FIN DE PREPARACIÓN DE DATOS PARA LA RED NEURONAL ---
+
+    // Liberar la matriz de MFCCs en PSRAM
     free_mfcc_matrix_psram(mfcc_mat, MEL_BANDS);
 
-    long int t3 = micros();
-    bool success = nn->predict();
-    long int t4 = micros();
+    long int t3 = micros();  // Tiempo antes de la inferencia
+    bool success = nn->predict(); // Realizar la inferencia
+    long int t4 = micros();// Tiempo después de la inferencia
 
     if (success) {
       TfLiteTensor *outputTensor = nn->getOutputTensor();
@@ -175,27 +183,55 @@ void loop() {
   } else {
     free_int32_array_psram(raw_signal);
   }
-}
+}//fin loop
 
 // IMPLEMENTACIÓN DE FUNCIONES
 
+// Función para normalizar y filtrar la señal de audio
 void audio_normalized(int32_t *raw_signal, float *normalized_signal) {
     float sum = 0;
+    float pre_emphasis_coeff = 0.97f; // Estándar para resaltar agudos en voz
+    float prev_sample = 0;
+    
     for(int j = 0; j < BUFLEN; j++) {
-        raw_signal[j] &= 0xFFFFFF00;    // Elimina datos de bits significativos
-        sum += (float)(raw_signal[j] >> 14);
+        raw_signal[j] &= 0xFFFFFF00;  //me ayuda a eliminar ruidos de baja amplitud
+        float current_raw = (float)(raw_signal[j] >> 14);
+        
+        // --- 1. PRE-ÉNFASIS --- ES PARA RESALTAR LOS AGUDOS DE LA VOZ, QUE SON CLAVE PARA DETECTAR EMOCIONES.
+        float high_boost = current_raw - (pre_emphasis_coeff * prev_sample);
+        prev_sample = current_raw;
+
+        // --- 2. FILTRADO Y SUAVIZADO ---
+        if (j > 1) {
+            high_boost = (high_boost + normalized_signal[j-1] + normalized_signal[j-2]) / 3.0f;
+        }
+
+        // Filtro High-pass (Mantenemos 0.80 para ignorar ruidos agudos y constantes)
+        //0.88 para ignorar silbidos, 0.80 para ignorar ruidos de bolsas
+        float y = high_boost - last_x + (0.88f * last_y);   //esta operacion es la
+        last_x = high_boost;
+        last_y = y;
+
+        normalized_signal[j] = y; 
+        sum += y;
     }
+
     float mean = sum / BUFLEN;
 
+    // --- 3. GANANCIA DE COMPENSACIÓN ---
     for(int j = 0; j < BUFLEN; j++) {
-        float centered = ((float)(raw_signal[j] >> 14)) - mean;
-        float val = centered / 100000.0f; 
+        float centered = normalized_signal[j] - mean;
+        // Subimos un poco más la ganancia para compensar el pre-énfasis
+        float val = (centered / 100000.0f) * 25.0f;   //100000.0f  60000.0f
+        
         if (val > 1.0f) val = 1.0f;
         if (val < -1.0f) val = -1.0f;
+        
         normalized_signal[j] = val;
     }
-}
+}//fin audio_normalized
 
+// Función para interpretar la salida del modelo y mostrar resultados
 int interprets_output(TfLiteTensor *outputTensor) {
     if (!outputTensor || !outputTensor->data.f) return 0;
     
@@ -203,8 +239,8 @@ int interprets_output(TfLiteTensor *outputTensor) {
     float val_angry = outputTensor->data.f[0];
     float val_other = 1.0f - val_angry;
     
-    // 2. Determinar el resultado (Umbral 0.5)
-    int result = (val_angry >= 0.5) ? 1 : 0;
+    // 2. Determinar el resultado (Umbral 0.35
+    int result = (val_angry >= 0.35) ? 1 : 0;
 
     // 3. Crear la barra visual [##########----------]
     String barra = "[";
@@ -217,16 +253,19 @@ int interprets_output(TfLiteTensor *outputTensor) {
     barra += "]";
 
     // --- SALIDA AL MONITOR SERIAL ---
-    // Mantenemos tu salida original exacta:
+    // salida original :
     Serial.printf("Salida: %.6f - %s\n", val_angry, emotion_vec[result].c_str());
     
-    // Agregamos el monitor de porcentajes y escala
-    //Serial.println(">>> COMPARATIVO DE CONFIANZA <<<");
+    //monitor de porcentajes y escala
+    
     Serial.printf("\nANGRY: %d%%  %s  OTHER: %d%%\n", (int)(val_angry*100), barra.c_str(), (int)(val_other*100));
     
     return result;
-}
+}//fin interprets_output
 
+
+
+// FUNCIONES DE MEMORIA PSRAM
 float** allocate_mfcc_matrix_psram(int rows, int cols) {
   float **matrix = new float*[rows];
   for (int j = 0; j < rows; j++) {
@@ -236,20 +275,24 @@ float** allocate_mfcc_matrix_psram(int rows, int cols) {
   return matrix;
 }
 
+// Liberar la matriz de MFCCs en PSRAM
 void free_mfcc_matrix_psram(float **matrix, int rows) {
   if (!matrix) return;
   for (int j = 0; j < rows; j++) if (matrix[j]) heap_caps_free(matrix[j]);
   delete[] matrix;
 }
 
+// Funciones para arrays de floats e int32_t en PSRAM
 float* allocate_float_array_psram(size_t size) {
   return (float*)heap_caps_malloc(size * sizeof(float), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
 }
 
+// Liberar array de floats en PSRAM
 void free_float_array_psram(float *arr) { if (arr) heap_caps_free(arr); }
-
+// Función para asignar un array de int32_t en PSRAM
 int32_t* allocate_int32_array_psram(size_t size) {
   return (int32_t*)heap_caps_malloc(size * sizeof(int32_t), MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
 }
 
+// Liberar array de int32_t en PSRAM
 void free_int32_array_psram(int32_t *arr) { if (arr) heap_caps_free(arr); }
