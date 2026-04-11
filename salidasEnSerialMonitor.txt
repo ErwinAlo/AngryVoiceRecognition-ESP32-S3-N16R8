@@ -1,0 +1,857 @@
+------------------- Iteración: 0 ----------------
+Salida: 0.901731 - Angry
+
+ANGRY: 90%  [##################--]
+Energía: 0.0357
+
+Tiempo MFCC: 199.83 ms
+Tiempo Inferencia: 218.94 ms
+Tiempo Total: 419.02 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 1 ----------------
+Salida: 0.707379 - Angry
+
+ANGRY: 70%  [##############------]
+Energía: 0.0251
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.90 ms
+Tiempo Total: 409.10 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 2 ----------------
+Salida: 0.971431 - Angry
+
+ANGRY: 97%  [###################-]
+Energía: 0.0242
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 3 ----------------
+Salida: 0.934929 - Angry
+
+ANGRY: 93%  [##################--]
+Energía: 0.0285
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 4 ----------------
+Salida: 0.915037 - Angry
+
+ANGRY: 91%  [##################--]
+Energía: 0.0518
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 5 ----------------
+Salida: 0.701525 - Angry
+
+ANGRY: 70%  [##############------]
+Energía: 0.0214
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.10 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 6 ----------------
+Salida: 0.544393 - Other
+
+ANGRY: 54%  [##########----------]
+Energía: 0.0231
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 7 ----------------
+Salida: 0.304229 - Other
+
+ANGRY: 30%  [######--------------]
+Energía: 0.0234
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.10 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 8 ----------------
+Salida: 0.248832 - Other
+
+ANGRY: 24%  [####----------------]
+Energía: 0.0210
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 9 ----------------
+Salida: 0.096745 - Other
+
+ANGRY: 9%  [#-------------------]
+Energía: 0.0216
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.11 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 10 ----------------
+Salida: 0.623353 - Other
+
+ANGRY: 62%  [############--------]
+Energía: 0.0230
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.11 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 11 ----------------
+Salida: 0.480705 - Other
+
+ANGRY: 48%  [#########-----------]
+Energía: 0.0277
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 12 ----------------
+Salida: 0.074213 - Other
+
+ANGRY: 7%  [#-------------------]
+Energía: 0.0368
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 13 ----------------
+Salida: 0.052043 - Other
+
+ANGRY: 5%  [#-------------------]
+Energía: 0.0294
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 14 ----------------
+Salida: 0.370373 - Other
+
+ANGRY: 37%  [#######-------------]
+Energía: 0.0386
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.11 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 15 ----------------
+Salida: 0.062990 - Other
+
+ANGRY: 6%  [#-------------------]
+Energía: 0.0344
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 16 ----------------
+Salida: 0.509542 - Other
+
+ANGRY: 50%  [##########----------]
+Energía: 0.0256
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 17 ----------------
+Salida: 0.774679 - Angry
+
+ANGRY: 77%  [###############-----]
+Energía: 0.0202
+
+Tiempo MFCC: 189.97 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 18 ----------------
+Salida: 0.883741 - Angry
+
+ANGRY: 88%  [#################---]
+Energía: 0.0362
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 19 ----------------
+Salida: 0.433465 - Other
+
+ANGRY: 43%  [########------------]
+Energía: 0.0299
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+Silencio detectado (E: 0.0019)
+
+------------------- Iteración: 20 ----------------
+Salida: 0.515390 - Other
+
+ANGRY: 51%  [##########----------]
+Energía: 0.0334
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 21 ----------------
+Salida: 0.965926 - Angry
+
+ANGRY: 96%  [###################-]
+Energía: 0.0388
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 22 ----------------
+Salida: 0.671329 - Other
+
+ANGRY: 67%  [#############-------]
+Energía: 0.0214
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 23 ----------------
+Salida: 0.503404 - Other
+
+ANGRY: 50%  [##########----------]
+Energía: 0.0230
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 24 ----------------
+Salida: 0.446015 - Other
+
+ANGRY: 44%  [########------------]
+Energía: 0.0263
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 25 ----------------
+Salida: 0.336228 - Other
+
+ANGRY: 33%  [######--------------]
+Energía: 0.0200
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.90 ms
+Tiempo Total: 409.10 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 26 ----------------
+Salida: 0.621191 - Other
+
+ANGRY: 62%  [############--------]
+Energía: 0.0236
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 27 ----------------
+Salida: 0.193253 - Other
+
+ANGRY: 19%  [###-----------------]
+Energía: 0.0428
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 28 ----------------
+Salida: 0.523458 - Other
+
+ANGRY: 52%  [##########----------]
+Energía: 0.0336
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 29 ----------------
+Salida: 0.092254 - Other
+
+ANGRY: 9%  [#-------------------]
+Energía: 0.0349
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 30 ----------------
+Salida: 0.309689 - Other
+
+ANGRY: 30%  [######--------------]
+Energía: 0.0391
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 31 ----------------
+Salida: 0.925287 - Angry
+
+ANGRY: 92%  [##################--]
+Energía: 0.0209
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 32 ----------------
+Salida: 0.993250 - Angry
+
+ANGRY: 99%  [###################-]
+Energía: 0.0230
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 33 ----------------
+Salida: 0.911066 - Angry
+
+ANGRY: 91%  [##################--]
+Energía: 0.0238
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.11 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 34 ----------------
+Salida: 0.951186 - Angry
+
+ANGRY: 95%  [###################-]
+Energía: 0.0264
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 35 ----------------
+Salida: 0.860884 - Angry
+
+ANGRY: 86%  [#################---]
+Energía: 0.0212
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 36 ----------------
+Salida: 0.989802 - Angry
+
+ANGRY: 98%  [###################-]
+Energía: 0.0200
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 37 ----------------
+Salida: 0.667449 - Other
+
+ANGRY: 66%  [#############-------]
+Energía: 0.0319
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 38 ----------------
+Salida: 0.897334 - Angry
+
+ANGRY: 89%  [#################---]
+Energía: 0.0205
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 39 ----------------
+Salida: 0.479563 - Other
+
+ANGRY: 47%  [#########-----------]
+Energía: 0.0231
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 40 ----------------
+Salida: 0.862076 - Angry
+
+ANGRY: 86%  [#################---]
+Energía: 0.0255
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 41 ----------------
+Salida: 0.755211 - Angry
+
+ANGRY: 75%  [###############-----]
+Energía: 0.0306
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.10 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 42 ----------------
+Salida: 0.821261 - Angry
+
+ANGRY: 82%  [################----]
+Energía: 0.0244
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 43 ----------------
+Salida: 0.866702 - Angry
+
+ANGRY: 86%  [#################---]
+Energía: 0.0217
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.91 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 44 ----------------
+Salida: 0.226663 - Other
+
+ANGRY: 22%  [####----------------]
+Energía: 0.0208
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 45 ----------------
+Salida: 0.331815 - Other
+
+ANGRY: 33%  [######--------------]
+Energía: 0.0312
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 46 ----------------
+Salida: 0.705298 - Angry
+
+ANGRY: 70%  [##############------]
+Energía: 0.0221
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 47 ----------------
+Salida: 0.519676 - Other
+
+ANGRY: 51%  [##########----------]
+Energía: 0.0213
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 48 ----------------
+Salida: 0.038236 - Other
+
+ANGRY: 3%  [--------------------]
+Energía: 0.0249
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.94 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 49 ----------------
+Salida: 0.014655 - Other
+
+ANGRY: 1%  [--------------------]
+Energía: 0.0273
+
+Tiempo MFCC: 189.93 ms
+Tiempo Inferencia: 218.94 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 50 ----------------
+Salida: 0.326341 - Other
+
+ANGRY: 32%  [######--------------]
+Energía: 0.0337
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 51 ----------------
+Salida: 0.416204 - Other
+
+ANGRY: 41%  [########------------]
+Energía: 0.0241
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 52 ----------------
+Salida: 0.848471 - Angry
+
+ANGRY: 84%  [################----]
+Energía: 0.0267
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 53 ----------------
+Salida: 0.032587 - Other
+
+ANGRY: 3%  [--------------------]
+Energía: 0.0256
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 54 ----------------
+Salida: 0.611634 - Other
+
+ANGRY: 61%  [############--------]
+Energía: 0.0349
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 55 ----------------
+Salida: 0.893549 - Angry
+
+ANGRY: 89%  [#################---]
+Energía: 0.0213
+
+Tiempo MFCC: 189.94 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 56 ----------------
+Salida: 0.322629 - Other
+
+ANGRY: 32%  [######--------------]
+Energía: 0.0286
+
+Tiempo MFCC: 189.93 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 57 ----------------
+Salida: 0.848689 - Angry
+
+ANGRY: 84%  [################----]
+Energía: 0.0223
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 58 ----------------
+Salida: 0.561665 - Other
+
+ANGRY: 56%  [###########---------]
+Energía: 0.0242
+
+Tiempo MFCC: 189.93 ms
+Tiempo Inferencia: 218.94 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 59 ----------------
+Salida: 0.012932 - Other
+
+ANGRY: 1%  [--------------------]
+Energía: 0.0274
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.14 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 60 ----------------
+Salida: 0.056128 - Other
+
+ANGRY: 5%  [#-------------------]
+Energía: 0.0417
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 61 ----------------
+Salida: 0.017150 - Other
+
+ANGRY: 1%  [--------------------]
+Energía: 0.0253
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 62 ----------------
+Salida: 0.574905 - Other
+
+ANGRY: 57%  [###########---------]
+Energía: 0.0243
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 63 ----------------
+Salida: 0.675318 - Other
+
+ANGRY: 67%  [#############-------]
+Energía: 0.0287
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 64 ----------------
+Salida: 0.844991 - Angry
+
+ANGRY: 84%  [################----]
+Energía: 0.0226
+
+Tiempo MFCC: 189.96 ms
+Tiempo Inferencia: 218.93 ms
+Tiempo Total: 409.13 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
+
+
+------------------- Iteración: 65 ----------------
+Salida: 0.596896 - Other
+
+ANGRY: 59%  [###########---------]
+Energía: 0.0223
+
+Tiempo MFCC: 189.95 ms
+Tiempo Inferencia: 218.92 ms
+Tiempo Total: 409.12 ms
+RAM Libre: 229 KB | PSRAM Libre: 7195 KB
+--------------------------------------------------
