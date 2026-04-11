@@ -20,8 +20,8 @@ int i = 0;
 
 // --- DEFINICIÓN DE PINES ---
 
-#define BUZZER_PIN 21
-#define MOSI_PIN   13
+#define BUZZER_PIN 21 // Pin para el buzzer
+#define MOSI_PIN   13 
 #define SCK_PIN    14
 #define CS_PIN     10
 #define NUM_MAT    1 
@@ -127,7 +127,7 @@ void loop() {
     energia /= BUFLEN;
 
     // Filtro básico de energía que permite ignorar segmentos de silencio o ruido muy bajo. El umbral de 0.020 es empírico y puede ajustarse según el entorno.
-    if (energia < 0.02) {    // estaba a 0.02  vamos a probar con uno nuevo
+    if (energia < 0.016) {    // estaba a 0.02  vamos a probar con uno nuevo
         if (i % 20 == 0) Serial.printf("Silencio detectado (E: %.4f)\n", energia); 
         emotion(0, Mat, 0, mxObj);
         digitalWrite(BUZZER_PIN, LOW); 
@@ -213,7 +213,7 @@ void audio_normalized(int32_t *raw_signal, float *normalized_signal) {
 
         // Filtro High-pass (Mantenemos 0.80 para ignorar ruidos agudos y constantes)
         //0.88 para ignorar silbidos, 0.80 para ignorar ruidos de bolsas
-        float y = high_boost - last_x + (0.88f * last_y);   //esta operacion es la
+        float y = high_boost - last_x + (0.88f * last_y);   //esta operacion es la implementación de un filtro de paso alto que ayuda a eliminar ruidos constantes y resaltar cambios en la señal, lo cual es útil para detectar emociones en la voz. El coeficiente de 0.88f controla la cantidad de filtrado, permitiendo ignorar ruidos agudos y constantes como silbidos o ruidos de bolsas.
         last_x = high_boost;
         last_y = y;
 
@@ -223,10 +223,10 @@ void audio_normalized(int32_t *raw_signal, float *normalized_signal) {
 
     float mean = sum / BUFLEN;
 
-    // --- 3. GANANCIA DE COMPENSACIÓN --- para que 
+    // --- 3. GANANCIA DE COMPENSACIÓN --- 
     for(int j = 0; j < BUFLEN; j++) {
         float centered = normalized_signal[j] - mean;
-        // Subimos un poco más la ganancia para compensar el pre-énfasis
+        // Subimos un poco más la ganancia para compensar el pre-énfasis probamos con 25.0f para que los valores de los MFCCs sean adecuados para la red neuronal, ajustando la escala de la señal para que oscile aproximadamente entre -1.0 y 1.0, con un énfasis en las frecuencias relevantes para la detección de emociones en la voz.
         float val = (centered / 120000.0f) * 25.0f;   //100000.0f  60000.0f   estos son factores de ganancia que ajustan la escala de la señal para que los valores de los MFCCs sean adecuados para la red neuronal. Se pueden ajustar según el comportamiento observado en la salida de los MFCCs.
         
         if (val > 1.0f) val = 1.0f;     // Limitar a 1.0 para evitar valores extremos que puedan afectar la inferencia
@@ -244,7 +244,7 @@ int interprets_output(TfLiteTensor *outputTensor) {
     float val_angry = outputTensor->data.f[0];  
      
     
-    // 2. Determinar el resultado 
+    // 2. Determinar el resultado de la emocion detectada
     int result = (val_angry >= 0.70)? 1 : 0;    //con el umbral estaba a 0.85 vamos a probar con uno nuevo
 
     // 3. Crear la barra visual [##########----------] que representa el porcentaje de "angry"
@@ -305,10 +305,6 @@ int32_t* allocate_int32_array_psram(size_t size) {
 
 // Liberar array de int32_t en PSRAM
 void free_int32_array_psram(int32_t *arr) { if (arr) heap_caps_free(arr); }
-
-
-
-
 
 
 // NOTAS
