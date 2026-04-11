@@ -6,15 +6,15 @@
 
 //Variables para FFT
 //------------------------------------------------------------------------------------------
-#define SAMPLING_RATE 4096
+#define SAMPLING_RATE 16000//4096 cambio a 16000 para micrófono I2S
 #define TOTAL_TIME 2
 #define SHAPE_INPUT SAMPLING_RATE*TOTAL_TIME //Tamaño de la señal de entrada
 
 //Variables para Ventaneo
 //------------------------------------------------------------------------------------------
-#define SIZE_WINDOW 256
-#define WINDOW_STEP 128
-#define NUMBER_OF_WINDOWS (((SHAPE_INPUT)-(SIZE_WINDOW))/(WINDOW_STEP) + 1)
+#define SIZE_WINDOW 512 //antes era 256    ahora es diferente para que coincida con el entrenamiento 16khz
+#define WINDOW_STEP 256 // antes 128
+#define NUMBER_OF_WINDOWS (((SHAPE_INPUT)-(SIZE_WINDOW))/(WINDOW_STEP) + 1)   
 #define SHAPE_FFT (SHAPE_INPUT/2)
 
 //Variables para MFCC

@@ -1,0 +1,5 @@
+//modelo_tesis_binario_Angry_finalv5
+
+unsigned char modelo_tesis_binario_Angry_finalv5_tflite[] = {
+
+unsigned int modelo_tesis_binario_Angry_finalv5_tflite_len = 91096;
