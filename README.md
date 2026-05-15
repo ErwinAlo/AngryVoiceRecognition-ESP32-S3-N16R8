@@ -123,9 +123,10 @@ El sistema puede mostrar:
 Si se detecta `Angry`, el buzzer se activa.
 
 ## Documentacion
+## Documentación
 
-- `PIPELINE_COMPLETO_ANGRY_VOICE_RECOGNITION.md`: pipeline completo del proyecto.
-- `cambios_documentacion_angry_voice.txt`: resumen de cambios/documentacion.
+- [Pipeline completo del proyecto](PIPELINE_COMPLETO_ANGRY_VOICE_RECOGNITION.md) : pipeline completo del proyecto.
+- [Cambios de documentación](cambios_documentacion_angry_voice.txt) : resumen de cambios/documentacion.
 
 ## Resumen
 
