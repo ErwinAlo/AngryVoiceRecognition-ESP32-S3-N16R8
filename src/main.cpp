@@ -127,7 +127,7 @@ void loop() {
     energia /= BUFLEN;
 
     // Filtro básico de energía que permite ignorar segmentos de silencio o ruido muy bajo. El umbral de 0.020 es empírico y puede ajustarse según el entorno.
-    if (energia < 0.016) {    // estaba a 0.02  vamos a probar con uno nuevo
+    if (energia < 0.02) {    // estaba a 0.02  vamos a probar con uno nuevo
         if (i % 20 == 0) Serial.printf("Silencio detectado (E: %.4f)\n", energia); 
         emotion(0, Mat, 0, mxObj);
         digitalWrite(BUZZER_PIN, LOW); 

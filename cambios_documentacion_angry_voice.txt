@@ -1,0 +1,35 @@
+Cambios de documentacion corregidos - Angry Voice Recognition
+
+1. Se corrigio la descripcion del dataset.
+   El proyecto no usa grabaciones propias. Usa un dataset existente llamado ESD, ubicado en Dataset/ESD/Emotional_Speech_Dataset/.
+
+2. Se agrego la estructura real del dataset.
+   El dataset esta dividido en Chinese y English. Dentro de cada idioma existen las emociones angry, happy, neutral, sad y surprise.
+
+3. Se agrego la distribucion correcta de audios.
+   Por cada emocion se tienen 3000 audios en train, 300 audios en test y 200 audios en evaluation.
+
+4. Se corrigio la clasificacion del proyecto.
+   El modelo no clasifica cinco emociones por separado. Se adapta el dataset a clasificacion binaria:
+   - angry -> Angry -> etiqueta 1
+   - happy, neutral, sad, surprise -> Other -> etiqueta 0
+
+5. Se integro el proceso real observado en el notebook ModelMFCC_CNN v2.ipynb.
+   El notebook carga audios a 16 kHz, detecta el inicio aproximado de la voz, recorta segmentos de 2 segundos, rellena con ceros si es necesario, agrega ruido blanco leve, calcula MFCC manualmente y entrena una CNN binaria.
+
+6. Se documento la forma de entrada del modelo.
+   Cada audio se transforma en una matriz MFCC de 20 x 63 x 1, coincidente con la configuracion usada en el firmware.
+
+7. Se documento el modelo.
+   El modelo es una CNN ligera con salida sigmoid para decidir entre Other y Angry.
+
+8. Se documento la relacion con el firmware.
+   El ESP32-S3 captura audio por I2S, normaliza la senal, descarta silencio por energia, calcula MFCC, ejecuta TensorFlow Lite Micro y muestra el resultado en matriz LED. Si detecta Angry, activa el buzzer.
+
+9. Se documento el uso de PSRAM.
+   La PSRAM se usa para el tensor arena de TensorFlow Lite Micro, matrices MFCC y buffers grandes de audio.
+
+10. Se actualizaron los archivos sugeridos.
+   - README_ANGRY_VOICE_RECOGNITION_CORREGIDO_FINAL.md
+   - PIPELINE_COMPLETO_ANGRY_VOICE_RECOGNITION_CORREGIDO_FINAL.md
+   - cambios_documentacion_angry_voice_CORREGIDO_FINAL.txt
