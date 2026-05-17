@@ -126,6 +126,7 @@ Si se detecta `Angry`, el buzzer se activa.
 ## Documentación
 
 - [Pipeline completo del proyecto](PIPELINE_COMPLETO_ANGRY_VOICE_RECOGNITION.md) : pipeline completo del proyecto.
+- [Pipeline V2 profesional](PIPELINE_V2_PROFESIONAL_ANGRY_VOICE_RECOGNITION.md) : version tecnica/profesional con ESP32-S3-N16R8, arquitectura hibrida MFCC + LightCNN-style CNN y tiempos medidos.
 - [Cambios de documentación](cambios_documentacion_angry_voice.txt) : resumen de cambios/documentacion.
 
 ## Resumen
