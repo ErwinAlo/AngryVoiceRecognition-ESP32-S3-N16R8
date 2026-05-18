@@ -262,7 +262,7 @@ Pero la arquitectura real implementada es mas pequena que LightCNN-9: tiene **3 
 
 El siguiente diagrama resume la arquitectura principal del sistema y muestra de forma separada el recorte central aplicado en el firmware:
 
-![Diagrama de arquitectura MFCC + CNN ligera hibrida para ESP32-S3-N16R8](DiagramaCNN_final_crop_visible_sin_sobreponer.png)
+![Diagrama de arquitectura MFCC + CNN ligera hibrida para ESP32-S3-N16R8](DiagramaCNN.png)
 
 Nota: la arquitectura base documentada y observada en el modelo entrenado usa entrada `20 x 124 x 1`. El recorte a `63 frames` corresponde a una adaptacion del firmware para concentrar la region central de la matriz MFCC.
 

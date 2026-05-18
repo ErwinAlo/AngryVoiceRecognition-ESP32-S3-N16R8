@@ -12,7 +12,7 @@ Other = 0
 Crear una solucion embebida implica trabajar con limites de memoria, computo y latencia. Por eso el sistema no usa una red neuronal grande sobre audio crudo. En su lugar, transforma la senal de voz a **MFCC** y ejecuta una **CNN compacta** directamente en el microcontrolador.
 
 <p align="center">
-<img src="./DiagramaCNN_final_crop_visible_sin_sobreponer.png" alt="MFCC and lightweight CNN architecture on ESP32-S3-N16R8" width="560px">
+<img src="./DiagramaCNN.png" alt="MFCC and lightweight CNN architecture on ESP32-S3-N16R8" width="560px">
 </p>
 
 ## Overview
